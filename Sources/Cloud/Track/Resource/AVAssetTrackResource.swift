@@ -7,7 +7,9 @@
 //
 
 import AVFoundation
+#if os(iOS) && os(tvOS)
 import UIKit
+#endif
 
 /// Load image from PHAsset as video frame
 public class AVAssetTrackResource: Resource {

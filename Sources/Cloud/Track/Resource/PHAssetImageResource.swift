@@ -6,6 +6,7 @@
 //  Copyright © 2018 Vito. All rights reserved.
 //
 
+#if !os(macOS)
 import AVFoundation
 import CoreImage
 import Photos
@@ -90,3 +91,4 @@ open class PHAssetImageResource: ImageResource {
         return resource
     }
 }
+#endif

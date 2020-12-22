@@ -6,6 +6,7 @@
 //  Copyright © 2019 AlanMoMo. All rights reserved.
 //
 
+#if !os(macOS)
 import Photos
 import UIKit
 
@@ -107,3 +108,4 @@ extension PHAssetLivePhotoResource {
         })
     }
 }
+#endif

@@ -6,6 +6,7 @@
 //  Copyright © 2017 Vito. All rights reserved.
 //
 
+#if !os(macOS)
 import Photos
 
 public class PHAssetTrackResource: AVAssetTrackResource {
@@ -81,3 +82,4 @@ public class PHAssetTrackResource: AVAssetTrackResource {
         return resource
     }
 }
+#endif

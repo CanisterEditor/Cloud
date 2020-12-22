@@ -7,9 +7,21 @@
 //
 
 import AVFoundation
+#if os(iOS) || os(tvOS)
 import UIKit
+#endif
 
 public extension AVAssetImageGenerator {
+    
+    #if os(macOS)
+    private var scale: CGFloat {
+        return 1
+    }
+    #else
+    private var scale: CGFloat {
+        return UIScreen.main.scale
+    }
+    #endif
     
     static func create(from items: [TrackItem], renderSize: CGSize) -> AVAssetImageGenerator? {
         let timeline = Timeline()
@@ -43,7 +55,7 @@ public extension AVAssetImageGenerator {
                 } else {
                     side = maximumSize.width / width * height
                 }
-                side = side * UIScreen.main.scale
+                side = side * scale
                 maximumSize = CGSize(width: side, height: side)
             }
         }
